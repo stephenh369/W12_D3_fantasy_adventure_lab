@@ -20,4 +20,8 @@ public abstract class Room {
     public int getPlayerCount() {
         return players.size();
     }
+
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
 }
