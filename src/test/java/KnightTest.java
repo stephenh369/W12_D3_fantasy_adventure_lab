@@ -50,4 +50,11 @@ public class KnightTest {
         knight.addTreasure(treasure);
         assertEquals(1, knight.getTreasureCount());
     }
+
+    @Test
+    public void canRemoveTreasure() {
+        knight.addTreasure(treasure);
+        knight.removeTreasure(treasure);
+        assertEquals(0, knight.getTreasureCount());
+    }
 }
