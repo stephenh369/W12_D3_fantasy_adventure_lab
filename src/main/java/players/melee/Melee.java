@@ -37,4 +37,10 @@ public abstract class Melee extends Player {
         int index = weapons.indexOf(weapon);
         return weapons.remove(index);
     }
+
+    public void changeEquippedWeapon(Weapon weapon) {
+        Weapon newWeapon = removeWeapon(weapon);
+        addWeapon(equippedWeapon);
+        equippedWeapon = newWeapon;
+    }
 }
