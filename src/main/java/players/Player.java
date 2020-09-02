@@ -21,4 +21,8 @@ public abstract class Player {
     public int getTreasureCount() {
         return treasures.size();
     }
+
+    public void addTreasure(Treasure treasure) {
+        treasures.add(treasure);
+    }
 }
