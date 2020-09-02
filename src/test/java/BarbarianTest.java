@@ -92,4 +92,11 @@ public class BarbarianTest {
         assertEquals(weapon2, barbarian.getEquippedWeapon());
         assertEquals(1, barbarian.getWeaponCount());
     }
+
+    @Test
+    public void canRage() {
+        barbarian.removeHealth(90);
+        barbarian.rage();
+        assertEquals(29, barbarian.getStrength());
+    }
 }
