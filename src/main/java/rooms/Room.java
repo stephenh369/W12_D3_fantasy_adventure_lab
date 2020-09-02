@@ -24,4 +24,8 @@ public abstract class Room {
     public void addPlayer(Player player) {
         players.add(player);
     }
+
+    public void removePlayer(Player player) {
+        players.remove(player);
+    }
 }

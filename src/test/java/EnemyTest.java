@@ -53,4 +53,11 @@ public class EnemyTest {
         enemyRoom.addPlayer(player1);
         assertEquals(1, enemyRoom.getPlayerCount());
     }
+
+    @Test
+    public void canRemovePlayer() {
+        enemyRoom.addPlayer(player1);
+        enemyRoom.removePlayer(player1);
+        assertEquals(0, enemyRoom.getPlayerCount());
+    }
 }
