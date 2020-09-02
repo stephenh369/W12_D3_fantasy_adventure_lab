@@ -23,7 +23,12 @@ public class TreasureRoomTest {
     }
 
     @Test
-    public void canGetTreasures() {
+    public void canGetTreasureCount() {
         assertEquals(1, treasureRoom.getTreasureCount());
+    }
+
+    @Test
+    public void canGetPlayerCount() {
+        assertEquals(0, treasureRoom.getPlayerCount());
     }
 }
