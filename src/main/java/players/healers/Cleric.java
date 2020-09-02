@@ -1,4 +1,10 @@
 package players.healers;
 
-public class Cleric {
+import components.HealingTool;
+
+public class Cleric extends Healer{
+
+    public Cleric(int health, HealingTool healingTool) {
+        super(health, healingTool);
+    }
 }
