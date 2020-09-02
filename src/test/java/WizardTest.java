@@ -11,12 +11,13 @@ public class WizardTest {
 
     Companion companion;
     Wizard wizard;
-    Spell spell;
+    Spell spell1;
     Treasure treasure;
 
     @Before
     public void before() {
         companion = new Companion("Hoot", "Owl", 2);
+        spell1 = new Spell("Fireball", 4);
         wizard = new Wizard(100, 9, companion);
 
     }
@@ -64,5 +65,23 @@ public class WizardTest {
     public void canRemoveHealth() {
         wizard.removeHealth(10);
         assertEquals(90, wizard.getHealth());
+    }
+
+    @Test
+    public void canGetSpellCount() {
+        assertEquals(0, wizard.getSpellCount());
+    }
+
+    @Test
+    public void canAddSpell() {
+        wizard.addSpell(spell1);
+        assertEquals(1, wizard.getSpellCount());
+    }
+
+    @Test
+    public void canRemoveSpell() {
+        wizard.addSpell(spell1);
+        wizard.removeSpell(spell1);
+        assertEquals(0, wizard.getSpellCount());
     }
 }

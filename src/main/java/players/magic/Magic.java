@@ -2,6 +2,7 @@ package players.magic;
 
 import components.Companion;
 import components.Spell;
+import components.Weapon;
 import players.Player;
 
 import java.util.ArrayList;
@@ -29,5 +30,14 @@ public abstract class Magic extends Player {
 
     public int getSpellCount() {
         return spells.size();
+    }
+
+    public void addSpell(Spell spell) {
+        spells.add(spell);
+    }
+
+    public Spell removeSpell(Spell spells) {
+        int index = this.spells.indexOf(spells);
+        return this.spells.remove(index);
     }
 }
