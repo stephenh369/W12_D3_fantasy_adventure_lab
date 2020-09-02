@@ -30,4 +30,8 @@ public abstract class Player {
         int index = treasures.indexOf(treasure);
         return treasures.remove(index);
     }
+
+    public void addHealth(int amount) {
+        health += amount;
+    }
 }
