@@ -28,4 +28,8 @@ public abstract class Melee extends Player {
     public int getWeaponCount() {
         return weapons.size();
     }
+
+    public void addWeapon(Weapon weapon) {
+        weapons.add(weapon);
+    }
 }
