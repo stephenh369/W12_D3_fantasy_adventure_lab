@@ -34,4 +34,8 @@ public abstract class Player {
     public void addHealth(int amount) {
         health += amount;
     }
+
+    public void removeHealth(int amount) {
+        health -= amount;
+    }
 }
