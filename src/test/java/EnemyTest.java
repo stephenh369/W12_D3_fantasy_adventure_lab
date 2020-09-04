@@ -30,7 +30,7 @@ public class EnemyTest {
         player1 = new Knight(100, 10, equippedWeapon2);
         enemies = new ArrayList<Player>();
         enemies.add(enemy1);
-        enemyRoom = new EnemyRoom("Dungeon", enemies);
+        enemyRoom = new EnemyRoom("Dungeon", enemy1);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class EnemyTest {
 
     @Test
     public void canGetEnemies() {
-        assertEquals(enemies, enemyRoom.getEnemies());
+        assertEquals(enemies, enemyRoom.getEnemy());
     }
 
     @Test

@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 public class EnemyRoom extends Room{
 
-    private ArrayList<Player> enemies;
+    private Player enemy;
 
-    public EnemyRoom(String name, ArrayList<Player> enemies) {
+    public EnemyRoom(String name, Player enemy) {
         super(name);
-        this.enemies = enemies;
+        this.enemy = enemy;
     }
 
-    public ArrayList<Player> getEnemies() {
-        return enemies;
+    public Player getEnemy() {
+        return enemy;
     }
 
-    public int getEnemyCount() {
-        return enemies.size();
-    }
+//    public int getEnemyCount() {
+//        return enemies.size();
+//    }
 }
