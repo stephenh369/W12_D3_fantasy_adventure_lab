@@ -18,7 +18,7 @@ public class WarlockTest {
     public void before() {
         companion = new Companion("Bones", "Skeleton", 5);
         spell1 = new Spell("Raise Dead", 3);
-        warlock = new Warlock(100, 8, companion);
+        warlock = new Warlock(100, 8, companion, spell1);
     }
 
     @Test

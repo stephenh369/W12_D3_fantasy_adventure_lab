@@ -1,6 +1,7 @@
 package players;
 
 import components.Treasure;
+import players.magic.Magic;
 import players.melee.Melee;
 
 import java.util.ArrayList;
@@ -46,10 +47,14 @@ public abstract class Player {
                 int damageOutput = ((Melee) this).getStrength() + ((Melee) this).getEquippedWeapon().getDamage();
                 enemy.removeHealth(damageOutput);
                 System.out.printf("You inflict %s damage to the enemy.", damageOutput);
-                System.out.println("\n");
-                System.out.printf("Enemy health: %s", enemy.getHealth());
-                System.out.println("\n");
+            } else if (this instanceof Magic){
+                int damageOutput = ((Magic) this).getIntellect() + ((Magic) this).getEquippedSpell().getDamage();
+                enemy.removeHealth(damageOutput);
+                System.out.printf("You inflict %s damage to the enemy.", damageOutput);
             }
+            System.out.println("\n");
+            System.out.printf("Enemy health: %s", enemy.getHealth());
+            System.out.println("\n");
         }
     }
 }

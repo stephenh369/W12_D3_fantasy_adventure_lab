@@ -18,7 +18,7 @@ public class WizardTest {
     public void before() {
         companion = new Companion("Hoot", "Owl", 2);
         spell1 = new Spell("Fireball", 4);
-        wizard = new Wizard(100, 9, companion);
+        wizard = new Wizard(100, 9, companion, spell1);
 
     }
 

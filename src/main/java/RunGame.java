@@ -1,4 +1,5 @@
 import components.Companion;
+import components.Spell;
 import components.Weapon;
 import players.Player;
 import players.magic.Warlock;
@@ -16,7 +17,8 @@ public class RunGame {
         game.getRooms().add(new EnemyRoom
                 ("Room 1",
                         new Warlock(50, 5,
-                                new Companion("Bones", "Skeleton", 4))));
+                                new Companion("Bones", "Skeleton", 4),
+                                new Spell("Frostbite", 5))));
 
 
 //        CHOOSE CLASS
