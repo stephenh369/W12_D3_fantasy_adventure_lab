@@ -71,9 +71,9 @@ public class Game {
             System.out.println("What do you do? \n 1. Attack \n 2. Use Class Ability \n 3. Get Stats \n 4. Get Enemy Stats");
             String userChoice = inputScanner.nextLine();
 
-//        if (userChoice.equalsIgnoreCase("Attack") || userChoice.equals("1")) {
-//            player.attack(room.getEnemy());
-//        }
+            if (userChoice.equalsIgnoreCase("Attack") || userChoice.equals("1")) {
+                player.attack(room.getEnemy());
+            }
 //
 //        else if (userChoice.equalsIgnoreCase("Use Class Ability") || userChoice.equals("2")) {
 //            player.getAbility();
