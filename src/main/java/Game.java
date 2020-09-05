@@ -1,6 +1,7 @@
 import components.Weapon;
 import players.Player;
 import players.melee.Barbarian;
+import rooms.EnemyRoom;
 import rooms.Room;
 
 import java.util.ArrayList;
@@ -36,5 +37,23 @@ public class Game {
         }
         System.out.printf("You have chosen %s", players.get(0).getClass().getSimpleName());
         System.out.println("\n");
+    }
+
+    public Player getPlayer(Player player) {
+        if (player instanceof Barbarian) { return getPlayerBarbarian(); }
+        return null;
+    }
+
+    public Barbarian getPlayerBarbarian() {
+        for (Player i : players) {
+            if (i.getClass().getSimpleName().equals("Barbarian")) {
+                return (Barbarian) i;
+            }
+        }
+        return null;
+    }
+
+    public EnemyRoom getEnemyRoom (Room room) {
+        return (EnemyRoom) room;
     }
 }
