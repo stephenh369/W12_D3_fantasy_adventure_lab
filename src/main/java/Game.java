@@ -81,7 +81,8 @@ public class Game {
             }
 
             else if (userChoice.equalsIgnoreCase("Get Stats") || userChoice.equals("3")) {
-                System.out.printf("Your health: %s", player.getHealth());
+                System.out.printf("Your health: %s ", player.getHealth());
+                System.out.printf(" Your Damage Output: %s", player.getDamage());
                 System.out.println("\n");
             }
 

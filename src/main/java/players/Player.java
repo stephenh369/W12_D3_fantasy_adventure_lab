@@ -24,6 +24,19 @@ public abstract class Player {
         return health;
     }
 
+    public int getDamage() {
+        if (this instanceof Melee) {
+            int damageOutput = ((Melee) this).getStrength() + ((Melee) this).getEquippedWeapon().getDamage();
+            return damageOutput;
+        }
+        if (this instanceof Magic) {
+            int damageOutput = ((Magic) this).getIntellect() + ((Magic) this).getEquippedSpell().getDamage();
+            return damageOutput;
+        }
+
+        return 0;
+    }
+
     public int getTreasureCount() {
         return treasures.size();
     }
