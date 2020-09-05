@@ -2,6 +2,7 @@ package players;
 
 import components.Treasure;
 import players.magic.Magic;
+import players.melee.Barbarian;
 import players.melee.Melee;
 
 import java.util.ArrayList;
@@ -58,6 +59,12 @@ public abstract class Player {
             System.out.println("\n");
             System.out.printf("Enemy health: %s", enemy.getHealth());
             System.out.println("\n");
+        }
+    }
+
+    public void getAbility() {
+        if (this instanceof Barbarian) {
+            ((Barbarian) this).rage();
         }
     }
 }

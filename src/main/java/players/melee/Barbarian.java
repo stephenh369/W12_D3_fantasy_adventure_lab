@@ -11,6 +11,7 @@ public class Barbarian extends Melee{
     public void rage() {
         if (getHealth() <= 10) {
             addStrength(20);
+            System.out.println("AARRRRGGGGHHH!");
         }
     }
 }

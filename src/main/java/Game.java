@@ -75,16 +75,17 @@ public class Game {
                 player.attack(room.getEnemy());
                 if (room.getEnemy().getHealth() <= 0) { encounter = false; }
             }
-//
-//        else if (userChoice.equalsIgnoreCase("Use Class Ability") || userChoice.equals("2")) {
-//            player.getAbility();
-//        }
 
-            if (userChoice.equalsIgnoreCase("Get Stats") || userChoice.equals("3")) {
+            else if (userChoice.equalsIgnoreCase("Use Class Ability") || userChoice.equals("2")) {
+                player.getAbility();
+            }
+
+            else if (userChoice.equalsIgnoreCase("Get Stats") || userChoice.equals("3")) {
                 System.out.printf("Your health: %s", player.getHealth());
                 System.out.println("\n");
+            }
 
-            } else if (userChoice.equalsIgnoreCase("Get Enemy Stats") || userChoice.equals("4")) {
+            else if (userChoice.equalsIgnoreCase("Get Enemy Stats") || userChoice.equals("4")) {
                 System.out.printf("Enemy health: %s", room.getEnemy().getHealth());
                 System.out.println("\n");
             }
