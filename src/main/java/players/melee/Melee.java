@@ -1,11 +1,12 @@
 package players.melee;
 
+import behaviors.IAttack;
 import components.Weapon;
 import players.Player;
 
 import java.util.ArrayList;
 
-public abstract class Melee extends Player {
+public abstract class Melee extends Player implements IAttack {
     private int strength;
     private Weapon equippedWeapon;
     private ArrayList<Weapon> weapons;

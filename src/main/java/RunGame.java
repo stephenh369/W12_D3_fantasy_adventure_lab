@@ -33,5 +33,6 @@ public class RunGame {
 
 //        ENCOUNTER
         game.enemyEncounter(player1, room1);
+        System.out.println("Success! Enemy defeated.");
     }
 }
