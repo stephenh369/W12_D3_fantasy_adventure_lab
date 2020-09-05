@@ -19,11 +19,8 @@ public class RunGame {
         Scanner inputScanner = new Scanner(System.in);
         System.out.println("Choose a class: ");
         String userChoice = inputScanner.nextLine();
-        if (userChoice.equalsIgnoreCase("Barbarian")) {
-            game.getPlayers().add(new Barbarian(100, 9, new Weapon("Club", 5)));
-        }
-        System.out.printf("You have chosen %s", game.getPlayers().get(0).getClass().getSimpleName());
-        System.out.println("\n");
+        game.createPlayer(userChoice);
+
 
         Barbarian player = (Barbarian) game.getPlayers().get(0);
         EnemyRoom room1 = (EnemyRoom) game.getRooms().get(0);
