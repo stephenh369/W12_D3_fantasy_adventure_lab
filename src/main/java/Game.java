@@ -5,6 +5,7 @@ import rooms.EnemyRoom;
 import rooms.Room;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
     private ArrayList<Room> rooms;
@@ -55,5 +56,37 @@ public class Game {
 
     public EnemyRoom getEnemyRoom (Room room) {
         return (EnemyRoom) room;
+    }
+
+    public void enemyEncounter(Player player, EnemyRoom room) throws InterruptedException {
+        boolean encounter = true;
+            System.out.println(room.getName());
+            Thread.sleep(1000);
+            System.out.printf("You encounter a %s.", room.getEnemy().getClass().getSimpleName());
+            System.out.println("\n");
+            Thread.sleep(1500);
+
+        while (true) {
+            Scanner inputScanner = new Scanner(System.in);
+            System.out.println("What do you do? \n 1. Attack \n 2. Use Class Ability \n 3. Get Stats \n 4. Get Enemy Stats");
+            String userChoice = inputScanner.nextLine();
+
+//        if (userChoice.equalsIgnoreCase("Attack") || userChoice.equals("1")) {
+//            player.attack(room.getEnemy());
+//        }
+//
+//        else if (userChoice.equalsIgnoreCase("Use Class Ability") || userChoice.equals("2")) {
+//            player.getAbility();
+//        }
+
+            if (userChoice.equalsIgnoreCase("Get Stats") || userChoice.equals("3")) {
+                System.out.printf("Your health: %s", player.getHealth());
+                System.out.println("\n");
+
+            } else if (userChoice.equalsIgnoreCase("Get Enemy Stats") || userChoice.equals("4")) {
+                System.out.printf("Enemy health: %s", room.getEnemy().getHealth());
+                System.out.println("\n");
+            }
+        }
     }
 }
