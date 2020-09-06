@@ -34,7 +34,7 @@ public class Game {
 
     public void createPlayer(String input) {
         if (input.equalsIgnoreCase("Barbarian")) {
-            players.add(new Barbarian(100, 9, new Weapon("Club", 5)));
+            players.add(new Barbarian(34, 9, new Weapon("Club", 5)));
         }
         System.out.printf("You have chosen %s", players.get(0).getClass().getSimpleName());
         System.out.println("\n");
@@ -73,11 +73,13 @@ public class Game {
 
             if (userChoice.equalsIgnoreCase("Attack") || userChoice.equals("1")) {
                 player.attack(room.getEnemy());
-                if (room.getEnemy().getHealth() <= 0) { encounter = false; }
+                if (room.getEnemy().getHealth() <= 0) { encounter = false; System.out.println("Success! Enemy defeated."); }
+                else { room.getEnemy().attack(player); }
             }
 
             else if (userChoice.equalsIgnoreCase("Use Class Ability") || userChoice.equals("2")) {
                 player.getAbility();
+                room.getEnemy().attack(player);
             }
 
             else if (userChoice.equalsIgnoreCase("Get Stats") || userChoice.equals("3")) {
@@ -90,6 +92,8 @@ public class Game {
                 System.out.printf("Enemy health: %s", room.getEnemy().getHealth());
                 System.out.println("\n");
             }
+
+            if (player.getHealth() <= 0) { encounter = false; System.out.printf("Game over, you were beaten by %s in %s", room.getEnemy(), room); }
         }
     }
 }

@@ -58,19 +58,19 @@ public abstract class Player {
         health -= amount;
     }
 
-    public void attack(Player enemy) {
-        if (enemy.getHealth() > 0) {
+    public void attack(Player player) {
+        if (player.getHealth() > 0) {
             if (this instanceof Melee) {
                 int damageOutput = ((Melee) this).getStrength() + ((Melee) this).getEquippedWeapon().getDamage();
-                enemy.removeHealth(damageOutput);
-                System.out.printf("You inflict %s damage to the enemy.", damageOutput);
+                player.removeHealth(damageOutput);
+                System.out.printf("%s inflicts %s damage to %s.",this.getClass().getSimpleName(), damageOutput, player.getClass().getSimpleName());
             } else if (this instanceof Magic){
                 int damageOutput = ((Magic) this).getIntellect() + ((Magic) this).getEquippedSpell().getDamage();
-                enemy.removeHealth(damageOutput);
-                System.out.printf("You inflict %s damage to the enemy.", damageOutput);
+                player.removeHealth(damageOutput);
+                System.out.printf("%s inflicts %s damage to %s.",this.getClass().getSimpleName(), damageOutput, player.getClass().getSimpleName());
             }
             System.out.println("\n");
-            System.out.printf("Enemy health: %s", enemy.getHealth());
+            System.out.printf("%s health: %s", player.getClass().getSimpleName(), player.getHealth());
             System.out.println("\n");
         }
     }
